@@ -1,17 +1,30 @@
 import Head from 'next/head'
+import 'foundation-sites/dist/css/foundation.min.css';
+//import './override.css';
+import { Breadcrumbs, BreadcrumbItem, Inline } from 'react-foundation';
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Basement Troglodytes</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
         <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Basement Troglodytes
         </h1>
+
+        <div className="breadcrumbs-example">
+          <nav aria-label="You are here:" role="navigation">
+            <Breadcrumbs>
+              <BreadcrumbItem><Inline showForSr>Current: </Inline>Home</BreadcrumbItem>
+              <BreadcrumbItem><a>UnityFPS</a></BreadcrumbItem>
+              <BreadcrumbItem isDisabled>The Team</BreadcrumbItem>
+            </Breadcrumbs>
+          </nav>
+        </div>
 
         <p className="description">
           Get started by editing <code>pages/index.js</code>
@@ -59,8 +72,11 @@ export default function Home() {
         </a>
       </footer>
 
+      {/* You've just got to live with inline style, i'm sorry*/}
       <style jsx>{`
         .container {
+          background: #1d2026;
+          color: #faf8d2;
           min-height: 100vh;
           padding: 0 0.5rem;
           display: flex;
@@ -130,7 +146,8 @@ export default function Home() {
         }
 
         code {
-          background: #fafafa;
+          color: #fff;
+          background: #24222e;
           border-radius: 5px;
           padding: 0.75rem;
           font-size: 1.1rem;
@@ -149,6 +166,7 @@ export default function Home() {
         }
 
         .card {
+          background: #1f2228;
           margin: 1rem;
           flex-basis: 45%;
           padding: 1.5rem;
@@ -163,8 +181,8 @@ export default function Home() {
         .card:hover,
         .card:focus,
         .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
+          color: #0070d3;
+          border-color: #0070d3;
         }
 
         .card h3 {
